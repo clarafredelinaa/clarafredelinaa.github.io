@@ -1,0 +1,2 @@
+//>>built
+define(["dojo/Deferred","../support/fx3dUtils"],function(f,g){return{make:function(a){var b=new f;if(a instanceof Object&&a.layer&&a.view&&a.layerView){var c=a.layer.vizType;if("string"!=typeof c)b.reject("No viz type specified.");else{var e=c+"Effect";c=a._test&&g.enableAddTesting?"fx3d/views/3d/effects/_test/"+e:"fx3d/views/3d/effects/"+c+"/"+e;try{require([c],function(d){d=new d(a);b.resolve(d)})}catch(d){b.reject(d)}}}else b.reject("No FxLayer object found.");return b}}});

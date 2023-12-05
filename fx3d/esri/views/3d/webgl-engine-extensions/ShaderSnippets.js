@@ -1,0 +1,3 @@
+//>>built
+define(["dojo/_base/declare","dojox/xml/parser","esri/views/3d/webgl-engine/lib/Util","./constraints"],function(m,n,g,h){return m(null,{declaredClass:"esri.views.3d.webgl-engine-extensions.ShaderSnippets",constructor:function(a){var d=h.VertexAttrConstants,c;for(c in d)this[d[c]]=h.VertexAttrConstants[c];if(a)for(var b in a)this[b]=a[b]},_parse:function(a){a=n.parse(a).getElementsByTagName("snippet");for(var d=/\$[a-zA-Z0-9_]+[ \t]*/,c=/[\$\s]+/g,b=0;b<a.length;b++){var k=a[b].getAttribute("name");
+g.assert(null==this[k]);for(var e=a[b].textContent;;){var f=e.match(d);if(null==f)break;var l=this[f[0].replace(c,"")];g.assert(void 0!==l);e=e.replace(f[0],l)}this[k]=e}}})});

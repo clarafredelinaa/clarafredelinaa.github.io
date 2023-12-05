@@ -1,0 +1,6 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See http://js.arcgis.com/3.15/esri/copyright.txt and http://www.arcgis.com/apps/webappbuilder/copyright.txt for details.
+//>>built
+define("dojo/_base/declare dijit/_WidgetBase dojo/on dojo/_base/lang dojo/_base/html dojo/query dojo/Evented dijit/Tooltip".split(" "),function(k,l,r,g,c,m,n,h){var e=null,f=k([l,n],{baseClass:"jimu-editor-preview-link-messager",declaredClass:"jimu.dijit.EditorPreviewLinkMessager",time:3E3,postMixInProperties:function(){this.nls=window.jimuNls.richTextEditor;this.tooltipPrefix=this.nls.previewLinkToolTipsPrefix;this.tooltipSuffix=this.nls.previewLinkToolTipsSuffix},isInBuilder:function(){return window&&
+window.parent&&window.parent.isBuilder},isHasContent:function(a,b){return a&&!b},filter:function(a){if(a.nodeType&&1===a.nodeType){a=m("a",a);for(var b=0,p=a.length;b<p;b++){var d=a[b];"_self"===c.attr(d,"target")&&(c.removeAttr(d,"target"),c.attr(d,"href"),c.attr(d,"onclick",g.hitch(this,function(q){this._interceptLink(q);return!1})))}}},_interceptLink:function(a,b){a&&a.preventDefault();b=a.target.href;h.show(this.tooltipPrefix+b+"\x3cbr/\x3e"+this.tooltipSuffix,a.target);setTimeout(g.hitch(this,
+function(){h.hide(a.target)}),this.time);return!1}});f.getInstance=function(){null===e&&(e=new f);return e};return f});
